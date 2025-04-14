@@ -1,0 +1,16 @@
+CREATE TABLE BOOKS
+(
+    id       INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    label    VARCHAR(200),
+    summary  TEXT,
+    author_id Integer
+);
+
+CREATE INDEX BOOKS_AUTHOR_ID on BOOKS(author_id);
+
+CREATE TABLE AUTHORS
+(
+    id        INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    firstname VARCHAR(200),
+    lastname  VARCHAR(200)
+);

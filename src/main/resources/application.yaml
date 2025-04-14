@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: graphql example
+  graphql:
+    graphiql:
+      enabled: true
+      path: /graphiql
+  datasource:
+    url: jdbc:h2:mem:test;DB_CLOSE_ON_EXIT=FALSE;AUTO_RECONNECT=TRUE
+    username: sa
+    driver-class-name: org.h2.Driver
+
+logging:
+  level:
+    com.zenika: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics
+  info:
+    git:
+      mode: full

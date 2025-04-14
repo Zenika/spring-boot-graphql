@@ -1,0 +1,9 @@
+INSERT INTO authors (firstname, lastname)
+VALUES ( 'JRR', 'Tolken' );
+
+INSERT INTO books(label, summary, author_id)
+VALUES ('La Communauté de l''Anneau', 'Aux temps reculés qu''évoque le récit, la Terre est peuplée d''innombrables créatures étranges. Les Hobbits, apparentés à l''Homme, mais proches également des Elfes et des Nains, vivent en paix au nord-ouest de l''Ancien Monde, dans la Comté. Paix précaire et menacée, cependant, depuis que Bilbon Sacquet a dérobé au monstre Gollum l''anneau de Puissance jadis forgé par Sauron de Mordor. Car cet anneau est doté d''un pouvoir immense et maléfique. Il permet à son détenteur de se rendre invisible et lui confère une autorité sans limites sur les possesseurs des autres anneaux. Bref, il fait de lui le Maître du Monde. C''est pourquoi Sauron s''est juré de reconquérir l''anneau par tous les moyens. Déjà ses Cavaliers Noirs rôdent aux frontières de la Comté.', 1);
+INSERT INTO books(label, summary, author_id)
+VALUES ('Les Deux Tours', 'Dispersée dans les terres de l''Ouest, la Communauté de l''Anneau affronte les périls de la guerre, tandis que Frodon, accompagné du fidèle Sam, poursuit une quête presque désespérée : détruire l''Anneau, unique en le jetant dans les crevasses d''Oradruir, a Montagne du destin. Mais aux frontières du royaume de Mordor, une mystérieuse créature les épie... Pour les perdre ou pour les sauver ?', 1);
+INSERT INTO books(label, summary, author_id)
+VALUES ('Le Retour du Roi', 'Tandis que le continent se couvre de ténèbres, annonçant pour le peuple des Hobbits l''aube d''une nouvelle ère, Frodon poursuit son entreprise : il lui faut à tout prix atteindre le Mont du Destin. Mais le seigneur des Ténèbres mobilise ses troupes. L''ennemi est partout et Frodon doit s''engager dans un dangereux périple à travers le Pays Noir... Les derniers combats de la guerre de l''Anneau s''achèvent dans un fracas d''apocalypse.', 1);
