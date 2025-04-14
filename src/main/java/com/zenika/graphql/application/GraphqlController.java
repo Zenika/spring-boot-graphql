@@ -5,6 +5,7 @@ import com.zenika.graphql.application.model.AuthorInputDto;
 import com.zenika.graphql.application.model.BookDto;
 import com.zenika.graphql.application.model.BookInputDto;
 import com.zenika.graphql.domain.LibraryService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.graphql.data.method.annotation.Argument;
@@ -59,7 +60,7 @@ public class GraphqlController {
     }
 
     @MutationMapping
-    AuthorDto addAuthor(@Argument(name = "author") AuthorInputDto authorDto) {
+    AuthorDto addAuthor(@Argument(name = "author") @Valid AuthorInputDto authorDto) {
         log.info("==== Adding author: {}", authorDto);
         return libraryService.addAuthor(authorDto);
     }

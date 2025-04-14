@@ -1,6 +1,8 @@
 package com.zenika.graphql.application.model;
 
+import jakarta.validation.constraints.NotBlank;
+
 public record AuthorInputDto(
-    String firstName,
-    String lastName
+    @NotBlank String firstName,
+    @NotBlank String lastName
 ) {}

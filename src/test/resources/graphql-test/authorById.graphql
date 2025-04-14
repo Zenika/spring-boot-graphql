@@ -1,0 +1,7 @@
+query MyQuery($id: ID!) {
+    authorById(id: $id) {
+        id
+        lastName
+        firstName
+    }
+}
