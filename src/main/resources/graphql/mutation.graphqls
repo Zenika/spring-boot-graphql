@@ -1,0 +1,16 @@
+type Mutation {
+    "Add a new book in the library. Return the new Book id"
+    addBook(book: BookInput!): Book!
+    addAuthor(author: AuthorInput!): Author!
+}
+
+input BookInput {
+    label: String!
+    summary: String
+    authorId: Int!
+}
+
+input AuthorInput {
+    firstName: String!
+    lastName: String!
+}

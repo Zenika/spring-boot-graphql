@@ -1,7 +1,9 @@
 package com.zenika.graphql.domain;
 
 import com.zenika.graphql.application.model.AuthorDto;
+import com.zenika.graphql.application.model.AuthorInputDto;
 import com.zenika.graphql.application.model.BookDto;
+import com.zenika.graphql.application.model.BookInputDto;
 import com.zenika.graphql.infrastructure.repository.AuthorAdapter;
 import com.zenika.graphql.infrastructure.repository.BookAdaptor;
 import lombok.RequiredArgsConstructor;
@@ -44,14 +46,15 @@ public class LibraryService {
                 .toList();
 
 
-        Map<Integer, AuthorDto> authorById = authorAdapter.getAuthorsByIds(authorIds)
+        Map<Integer, AuthorDto> authorsById = authorAdapter.getAuthorsByIds(authorIds)
+                .stream()
                 .collect(Collectors.toMap(AuthorDto::id, Function.identity()));
 
         return books
                 .stream()
                 .map(bookDto -> Map.entry(
                                 bookDto,
-                                authorById.get(bookDto.authorId())
+                                authorsById.get(bookDto.authorId())
                         )
                 )
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
@@ -75,5 +78,13 @@ public class LibraryService {
                         )
                 )
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+    }
+
+    public BookDto addBook(BookInputDto bookDto) {
+        return bookAdaptor.addBook(bookDto);
+    }
+
+    public AuthorDto addAuthor(AuthorInputDto authorDto) {
+        return authorAdapter.addAuthor(authorDto);
     }
 }
